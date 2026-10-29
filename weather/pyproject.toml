@@ -1,0 +1,25 @@
+[project]
+name = "weather"
+version = "0.1.0"
+description = "AMap weather MCP tools for live conditions and forecasts in China."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.105.2",
+    "httpx>=0.28.1",
+    "mcp>=1.27.2",
+]
+
+[build-system]
+requires = [ "hatchling",]
+build-backend = "hatchling.build"
+
+[project.scripts]
+weather = "weather_serve:main"
+
+[tool.hatch.build.targets.wheel]
+only-include = [
+    "__init__.py",
+    "weather_serve.py",
+    "AMap_adcode_citycode.xlsx",
+]

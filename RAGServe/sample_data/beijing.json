@@ -1,0 +1,41 @@
+{
+  "city": "北京",
+  "citycode": "010",
+  "source_type": "sample",
+  "updated_at": "sample-only",
+  "weather": {"condition": "多云（模拟）", "source": "sample-only", "is_sample": true},
+  "hubs": [
+    {"id": "south_station", "name": "北京南站", "arrival": "09:00", "departure": "19:00", "exit_buffer_minutes": 20, "return_buffer_minutes": 35},
+    {"id": "capital_airport", "name": "首都机场", "arrival": "08:30", "departure": "19:00", "exit_buffer_minutes": 45, "return_buffer_minutes": 75}
+  ],
+  "attractions": [
+    {
+      "id": "palace", "name": "故宫", "sample_opening": ["09:00", "17:00"], "visit_minutes": 150, "outdoor": true,
+      "sections": [
+        {"title": "游览顺序", "text": "示例打卡顺序：入口、中轴线建筑、宫殿细节。具体入口与通道须按当日官方信息核对。"},
+        {"title": "人文观察", "text": "可以关注宫殿空间的轴线布局、建筑屋顶和院落层次；这段文字仅用于演示资料检索，不代替正式讲解。"}
+      ]
+    },
+    {
+      "id": "jingshan", "name": "景山公园", "sample_opening": ["09:00", "17:00"], "visit_minutes": 75, "outdoor": true,
+      "sections": [
+        {"title": "打卡点", "text": "示例打卡点：园内登高观景位置。实际视野、开放路径与天气条件需现场核对。"},
+        {"title": "人文观察", "text": "登高视角适合观察城市中轴线的空间关系；此描述是示例知识库内容。"}
+      ]
+    },
+    {
+      "id": "national_museum", "name": "国家博物馆", "sample_opening": ["09:00", "17:00"], "visit_minutes": 120, "outdoor": false,
+      "sections": [
+        {"title": "参观提示", "text": "示例建议：入馆后先按当天开放展厅安排参观，再选择感兴趣的主题展。预约与展览信息必须查官方公告。"},
+        {"title": "人文观察", "text": "通过不同展陈主题了解历史文化脉络；具体展品与展期不在示例资料中。"}
+      ]
+    }
+  ],
+  "route_minutes": {
+    "south_station": {"palace": 45, "jingshan": 50, "national_museum": 35},
+    "capital_airport": {"palace": 75, "jingshan": 80, "national_museum": 70},
+    "palace": {"south_station": 45, "capital_airport": 75, "jingshan": 20, "national_museum": 30},
+    "jingshan": {"south_station": 50, "capital_airport": 80, "palace": 20, "national_museum": 35},
+    "national_museum": {"south_station": 35, "capital_airport": 70, "palace": 30, "jingshan": 35}
+  }
+}

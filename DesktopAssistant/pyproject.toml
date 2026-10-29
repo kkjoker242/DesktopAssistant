@@ -1,0 +1,28 @@
+[project]
+name = "desktop-assistant"
+version = "0.1.0"
+description = "PySide6 desktop pet with chat, weather MCP tools, and a travel planning demo."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.107.1",
+    "dotenv>=0.9.9",
+    "faiss-cpu>=1.14.2",
+    "httpx>=0.28.1",
+    "langchain-community>=0.3",
+    "langchain-core>=0.3",
+    "langchain-text-splitters>=0.3",
+    "mcp>=1.27.2,<2",
+    "pyside6",
+    "rank-bm25>=0.2.2",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
